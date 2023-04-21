@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../icofont/icofont/icofont.min.css">
+    <link rel="stylesheet" href="../../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="w-100 border p-5 bg-dark">
+    <audio id="audio" src=""autoplayer></audio>
+    <audio src=""></audio>
+    <div class="w-100 border p-3 bg-success">
+        <div>
+            <button onclick="previous()">
+                <i class="icofont-ui-previous"></i>
+            </button>
+            <button onclick="play()">
+                <i class="icofont-ui-play"></i>
+            </button>
+            <button onclick="pause">
+                <i class="icofont-ui-pause"></i>
+            </button> 
+            <button onclick="next()">
+                <i class="icofont-ui-next"></i>
+            </button> 
+        </div>
+        <div>
+            <input type="range" name="" id="musicControl">
+        </div>
+        <input type="range" name="" id="volumeControl">
+    </div>
+    </main>
+</body>
+</html>
+<script> 
+let audio = document.getElementById("audio");
+index = 0;
+let audioarray = ["../Musicfolder/03 - Joyous Celebration - Big God.mp3", "../Musicfolder/1 Moni Baba kan.mp3",
+"../Musicfolder/All around.mp3", "../Musicfolder/As We Pray.mp3", "../Musicfolder/Baba.mp3", "../Musicfolder/Bcus He lives.mp3",
+"../Musicfolder/Fiyin folu.mp3", "../Musicfolder/Frank Edward-Mma Mma.mp3", "../Musicfolder/Frank Edwards - I see him.mp3",
+"../Musicfolder/Frank-Edwards-Under-The-Canopy.mp3", "../Musicfolder/I'LL SAY YES.mp3", "../Musicfolder/Turn_It_Around.mp3"]
+    audio.src = audioarray[index]
+    let volumeControl = document.getElementById("volumeControl");
+    let musicControl = document.getElementById("musicControl");
+    
+        function next() {
+           if (index == audioarray.length) {
+            index = 0;
+            audio.src = audioarray[index];
+            index++;
+           } else {
+            audio.src = audioarray[index];
+            index++;
+            console.log(audioarray);
+           }
+        }
+
+        function previous () {
+           if (index == audioarray.length) {
+            index = 0;
+            audio.src = audioarray[index];
+            index--;
+           } else {
+            audio.src = audioarray[index];
+            index--;
+            console.log(audioarray);
+           }
+        }
+
+        function play () {
+        }
+
+</script>
