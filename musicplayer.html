@@ -7,30 +7,51 @@
     <link rel="stylesheet" href="../../icofont/icofont/icofont.min.css">
     <link rel="stylesheet" href="../../bootstrap-5.2.3-dist/css/bootstrap.min.css">
     <title>Document</title>
+    <style>
+        .smallcont{
+            width: 500px;
+            height: 500px;
+            background: red;
+        }
+        .largecont{
+            width: 350px;
+            height: 500px;
+            background: black;
+        }
+    </style>
 </head>
 <body>
     <main class="w-100 border p-5 bg-dark">
-    <audio id="audio" src=""autoplayer></audio>
-    <audio src=""></audio>
-    <div class="w-100 border p-3 bg-success">
-        <div>
+
+        <!-- <div class="bigcont"> -->
+        <!-- <div class="smallcont"></div> -->
+        <div class="largecont"></div>
+        <!-- </div> -->
+        
+
+    <audio id="audio" src="" autoplay></audio>
+    <div class="w-100 border p-3 bg-secondary">
+        <div class="w-25 border rounded p-2 align-items-center mx-auto my-1">
             <button onclick="previous()">
                 <i class="icofont-ui-previous"></i>
             </button>
             <button onclick="play()">
                 <i class="icofont-ui-play"></i>
             </button>
-            <button onclick="pause">
+            <button onclick="pause()">
                 <i class="icofont-ui-pause"></i>
             </button> 
             <button onclick="next()">
                 <i class="icofont-ui-next"></i>
             </button> 
         </div>
-        <div>
-            <input type="range" name="" id="musicControl">
+        <div class="align-items-center">
+            <input type="range" name="" id="musicControl" class="w-25 align-items-center">
         </div>
-        <input type="range" name="" id="volumeControl">
+        <div>
+            <i class="icofont-ui-volume"></i>
+            <input type="range" name="" id="volumeControl" class="">
+        </div>
     </div>
     </main>
 </body>
@@ -70,7 +91,30 @@ let audioarray = ["../Musicfolder/03 - Joyous Celebration - Big God.mp3", "../Mu
            }
         }
 
-        function play () {
+function play () {
+    audio.play();
+    audioPlay = function() {
+        let audioTime = Math.round(audio.currentTime);
+        let audioLength = Math.round(audio.duration)
+        time.style.width = (audioTime * 100) / audioLength + '%';
+        if (audioTime == audioLength && treck < 3) {
+            treck++; // then Increase the variable 
+            switchTreck(treck); // change track
+        // Otherwise we check the same, but the treck variable is greater than or equal to four
+        } else if (audioTime == audioLength && treck >= 3) {
+            treck = 0; // then we assign treck to zero
+            switchTreck(treck); //Change track
         }
+    }
+}
+
+function pause() { 
+  audio.pause(); 
+}
+volumeControl.addEventListener("ondrag", function(){
+    audio.volume();
+})
+
+
 
 </script>
