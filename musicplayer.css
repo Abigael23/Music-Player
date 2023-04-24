@@ -1,10 +1,40 @@
-.smallcont{
-    width: 500px;
-    height: 500px;
-    background: red;
-}
 .largecont{
-    width: 350px;
-    height: 500px;
-    background: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 380px;
+    height: 425px;
+    background: rgb(34, 85, 98);
+}
+aside{
+    width: 115px;
+    height: 115px;
+    text-align: center;
+}
+.largecont button{
+    outline: none;
+    border: none;
+    background: none;
+}
+.smallcont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 650px;
+    height: 400px;
+}
+.bigdiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 1150px;
+    height: 425px;
+    }
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
 }

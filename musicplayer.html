@@ -10,24 +10,113 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="w-100 border p-5 bg-dark">
-
-        <!-- <div class="bigcont"> -->
-        <!-- <div class="smallcont"></div> -->
-        <div class="largecont"></div>
-        <!-- </div> -->
+    <main class="w-100 border p-1 bg-dark">
+        <nav class="navbar w-100 border p-1 rounded shadow mx-auto bg-warning">
+            <a class="navbar-brand text-danger" href="">
+                <h1 class="text-primary">
+                    <i class="icofont-listine-dots"></i>
+                    BOLD-MUSIC PLAYER
+                </h1> 
+            </a>
+            <ul class="nav align-items-center">
+                <li class="nav-item">
+                    <a href="#" class="nav-link fs-3 fw-bold">
+                        <i class="icofont-gift"></i>
+                    </a>
+                </li>
+               <li class="nav-item">
+                    <a href="#" class="nav-link fs-3 fw-bold">
+                        <i class="icofont-ui-search"></i>  
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link fs-3 fw-bold">
+                    <i class="icofont-ui-add"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="bigdiv">
+            <div class="largecont">
+                <aside class="bg-primary">
+                    <button class="text-white">
+                        <h1>
+                            <i class="icofont-music"></i>
+                        </h1>
+                        <p>LIBRARY</p>
+                    </button>
+                </aside>
+                <aside class="bg-warning">
+                    <button class="text-white">
+                        <h1>
+                            <i class="icofont-ui-folder"></i>
+                        </h1>
+                        <p>FOLDER</p>
+                    </button>
+                </aside>
+                <aside class="bg-danger">
+                    <button class="text-white">
+                        <h1>
+                            <i class="icofont-heart-alt"></i>
+                        </h1>
+                        <p>FAVORITE</p>
+                    </button>
+                </aside>
+                <aside class="bg-info">
+                    <button class="text-white">
+                        <h1>
+                            <i class="icofont-history"></i>
+                        </h1>
+                        <p>RECENT PLAY</p>
+                    </button>
+                </aside>
+                <aside class="bg-success">
+                    <button class="text-white">
+                        <h1>
+                            <i class="icofont-music-note"></i>
+                        </h1>
+                        <p>RECENT ADD</p>
+                    </button>
+                </aside>
+                <aside class="bg-secondary">
+                    <button class="text-white">
+                        <h1>
+                            <i class="icofont-music-notes"></i>
+                        </h1>
+                        <p>MOST PLAY</p>
+                    </button>
+                </aside>
+            </div>
+            <div class="smallcont">
+                <div>
+                    <img src="../../pix-ass/my pics/abigael.jpg" alt="">
+                    <p class="text-primary">Abby Darams</p>
+                </div>
+                <div>
+                    <img src="../pix folder/mercychinw.jpg" alt="">
+                    <p class="text-primary">Mercy Chinwo</p>
+                </div>
+                <div>
+                    <img src="../pix folder/Nathaniel Bassey.JPG" alt="">
+                    <p class="text-primary">Nathaniel Bassey</p>
+                </div>
+                <div>
+                    <img src="../pix folder/Dunsin-Oyekan-3.jpg" alt="">
+                    <p class="text-primary">Dunsin Oyekan</p>
+                </div>
+            </div>
+        </div>
         
-
     <audio id="audio" src="" autoplay></audio>
     <div class="w-100 border p-3 bg-secondary">
         <div class="w-25 border rounded p-2 align-items-center mx-auto my-1">
             <button onclick="previous()">
                 <i class="icofont-ui-previous"></i>
             </button>
-            <button onclick="play()">
+            <button id="play" onclick="play()">
                 <i class="icofont-ui-play"></i>
             </button>
-            <button onclick="pause()">
+            <button id="pause" onclick="pause()">
                 <i class="icofont-ui-pause"></i>
             </button> 
             <button onclick="next()">
@@ -38,7 +127,8 @@
             <input type="range" name="" id="musicControl" class="w-25 align-items-center">
         </div>
         <div>
-            <i class="icofont-ui-volume"></i>
+            <!-- <i class="icofont-ui-volume"></i> -->
+            <i class="icofont-audio"></i>
             <input type="range" name="" id="volumeControl" class="">
         </div>
     </div>

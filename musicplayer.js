@@ -31,9 +31,12 @@ let audioarray = ["../Musicfolder/03 - Joyous Celebration - Big God.mp3", "../Mu
             console.log(audioarray);
            }
         }
-
+        document.getElementById("plause").style.display = "none"
+        // document.getElementById("play").style.display = ""
 function play () {
     audio.play();
+    document.getElementById("plause1").style.display = "block"
+    document.getElementById("play1").style.display = "none"
     audioPlay = function() {
         let audioTime = Math.round(audio.currentTime);
         let audioLength = Math.round(audio.duration)
@@ -51,7 +54,30 @@ function play () {
 
 function pause() { 
   audio.pause(); 
+  document.getElementById("play1").style.display = "block"
+  document.getElementById("plause1").style.display = "none"
 }
 volumeControl.addEventListener("ondrag", function(){
     audio.volume();
 })
+// btnPrev.addEventListener("click", function() {
+    // Check that the treck variable is greater than zero
+    // if (treck > 0) {
+        // treck--; // If true, reduce the variable by one
+        // switchTreck(treck); // Change the song.
+    // } else { // Otherwise
+        // treck = 3; // Assign three
+        // switchTreck(treck); // Change the song
+    // }
+// });
+
+// btnNext.addEventListener("click", function() {
+    // Check that the treck variable is greater than three
+    // if (treck < 3) { // If so
+        // treck++; // increase it by one
+        // switchTreck(treck); // Change the song 
+    // } else { // Otherwise
+        // treck = 0; // Assign a zero to it
+        // switchTreck(treck); // Change the song
+    // }
+// });
