@@ -21,63 +21,34 @@ let audioarray = ["../Musicfolder/03 - Joyous Celebration - Big God.mp3", "../Mu
         }
 
         function previous () {
-           if (index == audioarray.length) {
-            index = 0;
-            audio.src = audioarray[index];
-            index--;
-           } else {
-            audio.src = audioarray[index];
-            index--;
-            console.log(audioarray);
-           }
+            if (index == 0) {
+                index = audioarray.length-1;
+                audio.src = audioarray[index];
+                index--;
+               } else {
+                audio.src = audioarray[index];
+                index--;
+                console.log(audioarray);
+               }
         }
-        document.getElementById("plause").style.display = "none"
+        // document.getElementById("plause").style.display = "none"
         // document.getElementById("play").style.display = ""
 function play () {
     audio.play();
-    document.getElementById("plause1").style.display = "block"
-    document.getElementById("play1").style.display = "none"
-    audioPlay = function() {
-        let audioTime = Math.round(audio.currentTime);
-        let audioLength = Math.round(audio.duration)
-        time.style.width = (audioTime * 100) / audioLength + '%';
-        if (audioTime == audioLength && treck < 3) {
-            treck++; // then Increase the variable 
-            switchTreck(treck); // change track
-        // Otherwise we check the same, but the treck variable is greater than or equal to four
-        } else if (audioTime == audioLength && treck >= 3) {
-            treck = 0; // then we assign treck to zero
-            switchTreck(treck); //Change track
-        }
-    }
+    // document.getElementById("plause").style.display = "block"
+    // document.getElementById("play").style.display = "none"
 }
 
 function pause() { 
   audio.pause(); 
-  document.getElementById("play1").style.display = "block"
-  document.getElementById("plause1").style.display = "none"
+//   document.getElementById("play").style.display = "block"
+//   document.getElementById("plause").style.display = "none"
 }
-volumeControl.addEventListener("ondrag", function(){
-    audio.volume();
-})
-// btnPrev.addEventListener("click", function() {
-    // Check that the treck variable is greater than zero
-    // if (treck > 0) {
-        // treck--; // If true, reduce the variable by one
-        // switchTreck(treck); // Change the song.
-    // } else { // Otherwise
-        // treck = 3; // Assign three
-        // switchTreck(treck); // Change the song
-    // }
-// });
-
-// btnNext.addEventListener("click", function() {
-    // Check that the treck variable is greater than three
-    // if (treck < 3) { // If so
-        // treck++; // increase it by one
-        // switchTreck(treck); // Change the song 
-    // } else { // Otherwise
-        // treck = 0; // Assign a zero to it
-        // switchTreck(treck); // Change the song
-    // }
-// });
+// function volumeControl(){
+//     audio.onvolumechange();
+//     if (condition) {
+        
+//     } else {
+        
+//     }
+// }
